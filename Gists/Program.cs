@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Gists
 {
-    
-
     class Program
     {
         static void printEvenNumbers(ref List<int> list)

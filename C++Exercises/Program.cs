@@ -10,7 +10,7 @@ namespace C__Exercises
     {
         static void Main(string[] args)
         {
-            //LOOPS EXERCISE----------------------------
+           //LOOPS EXERCISE----------------------------
             for (int i = 100; i > 0; i--)            //|
             {                                        //|
                 Console.Write(i);                    //|
@@ -134,7 +134,7 @@ namespace C__Exercises
                 cnt++;                               //|
             }                                        //|
             Console.WriteLine(sum2);                 //|
-            //------------------------------------------                      
+           //------------------------------------------                      
             Console.Read();
         }
     }

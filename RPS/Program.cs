@@ -11,10 +11,8 @@ namespace RPS
     {
         static void Main(string[] args)
         {
-
             while (true)
             {
-
                 Console.Clear();
                 Random PCChoice = new Random();
                 int rand = PCChoice.Next(49, 52);
@@ -26,7 +24,6 @@ namespace RPS
                 Console.Clear();
                 Console.WriteLine("Press 1 for Rock, 2 for Paper and 3 for Scissors. Press 'Q' to quit.");
                 Console.Write("User Choice: ");
-               
                 if (test.Key.ToString() == "D1")
                 {
                     Console.Write("Rock\n");
@@ -87,9 +84,6 @@ namespace RPS
                 if (test.Key == ConsoleKey.Q)
                     break;
                 System.Threading.Thread.Sleep(2000);
-               
-               
-
             }
             Console.Clear();
             Console.WriteLine("Game Over!");

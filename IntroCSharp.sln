@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C++Exercises", "C++Exercise
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPS", "RPS\RPS.csproj", "{0539C723-E1F0-465B-8AEE-A6591F1F89E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0539C723-E1F0-465B-8AEE-A6591F1F89E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0539C723-E1F0-465B-8AEE-A6591F1F89E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0539C723-E1F0-465B-8AEE-A6591F1F89E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

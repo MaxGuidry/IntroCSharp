@@ -85,13 +85,9 @@ namespace IntroCSharp
         static void Main(string[] args)
         {
 
-            Zombie z = new Zombie(100, 50);
-            Ninja n = new Ninja(400, 20);
-            n.Attack(z);
-            z.Attack(n);
-            
-
-
+            int test =Console.WindowTop;
+            int testbottom = Console.WindowLeft;
+            int test3 = Console.LargestWindowHeight;
         }
     }
 

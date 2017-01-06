@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPS", "RPS\RPS.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{FEE5863D-ACD3-4743-93EF-960F76BB1AA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Differentiation", "Differentiation\Differentiation.csproj", "{DBAB1564-723E-448E-B637-9B4A03087F0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D880C0DA-B0F3-4D7F-8AAF-A2C09830ECAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEE5863D-ACD3-4743-93EF-960F76BB1AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEE5863D-ACD3-4743-93EF-960F76BB1AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEE5863D-ACD3-4743-93EF-960F76BB1AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEE5863D-ACD3-4743-93EF-960F76BB1AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBAB1564-723E-448E-B637-9B4A03087F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBAB1564-723E-448E-B637-9B4A03087F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBAB1564-723E-448E-B637-9B4A03087F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBAB1564-723E-448E-B637-9B4A03087F0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,9 +17,9 @@ namespace Differentiation
         {
             return (char)(a + 48);
         }
-        static public string convertToEquation(string a)
+        static public List<char> convertToEquation(string a)
         {
-            char[] temp = new char[10];
+            char[] temp = new char[20];
             List<char> equation = new List<char>();
             int digits = 0;
             int index = 0;
@@ -29,11 +29,11 @@ namespace Differentiation
             {
                 if (i < a.Length)
                 {
+
                     if (convertToInt(a[i]) >= 0 && convertToInt(a[i]) <= 9)
                     {
                         digits++;
                         temp[i] = a[i];
-
                     }
                     else
                     {
@@ -43,43 +43,60 @@ namespace Differentiation
                             if (digits == 1)
                                 number += convertToInt(temp[index]);
                             else
-                                number += (int)(convertToInt(temp[index]) * (Math.Pow(10 , digits - 1)));
+                                number += (int)(convertToInt(temp[index]) * (Math.Pow(10, digits - 1)));
                             index++;
                             digits--;
                         }
                     }
+                    if (a[i] == '*' || a[i] == 'x' || a[i] == '+' || a[i] == '-' || a[i] == '^')
+                    {
+                        if (number > 0)
+                            equation.Add((char)number);
+                        number = 0;
+                        equation.Add(a[i]);
+                        index++;
+                    }
                 }
                 else
                 {
+                    
                     test = digits;
                     for (int j = 0; j < test; j++)
                     {
                         if (digits == 1)
                             number += convertToInt(temp[index]);
-                       else
+                        else
                             number += (int)(convertToInt(temp[index]) * (Math.Pow(10, digits - 1)));
                         index++;
                         digits--;
                     }
                 }
-                if(number>0)
+                
+                if (number > 0)
                 {
                     equation.Add((char)number);
+                    number = 0;
                 }
             }
-            string temper = temp.ToString();
-            return temper;
+            
+            return equation;
+        }
+        static public List<char> differentiate(List<char> a)
+        {
+            List<char> temp = new List<char>();
+            
+            return temp;
         }
         static void Main(string[] args)
         {
-            
+
             string equation = Console.ReadLine();
-            convertToEquation(equation);
-            for (int i = 0; i < equation.Length; i++)
+           List<char> testing = convertToEquation(equation);
+            foreach(char a in testing)
             {
-
+                Console.Write(a);
             }
-
+            Console.Read();
         }
     }
 }

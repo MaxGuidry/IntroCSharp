@@ -84,7 +84,17 @@ namespace Differentiation
         static public List<char> differentiate(List<char> a)
         {
             List<char> temp = new List<char>();
-            
+            temp.Add(a[0]);
+            for (int i =0;i<a.Count;i++)
+            {
+                if(a[i]=='x')
+                {
+                    if(a[i+1]=='^')
+                    {
+                      
+                    }
+                }
+            }
             return temp;
         }
         static void Main(string[] args)

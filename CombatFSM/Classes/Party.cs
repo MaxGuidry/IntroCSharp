@@ -9,7 +9,11 @@ namespace CombatFSM.Classes
    public class Party
     {
         public Party() { }
-        private Player activePlayer;
-        public Player playerOne, playerTwo, playerThree;
+        public Player activePlayer;
+        public void addPlayer(Player a)
+        {
+            players.Add(a);
+        }
+        private List<Player> players =new List<Player>();
     }
 }

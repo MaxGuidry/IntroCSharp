@@ -12,20 +12,25 @@ namespace CombatFSM
 {
     public partial class Form1 : Form
     {
-        
-        
+        Combat test = new Combat();
+
         public Form1()
         {
             InitializeComponent();
-            Combat test = new Combat();
-            test.partyOne = new Party();
-            test.partyTwo = new Party();
-            test.partyOne.playerOne = new Player("Jim");
-            test.partyOne.playerTwo = new Player("Pam");
-            test.partyOne.playerThree = new Player("Michael");
-            test.partyTwo.playerOne = new Player("Leslie");
-            test.partyTwo.playerTwo = new Player("Ron");
-            test.partyTwo.playerThree = new Player("Ann");
+
+            var a = new Party();
+            var b = new Party();
+            var c= new Player("Jim");
+            var d= new Player("Pam");
+            var e = new Player("Michael");
+            var f= new Player("Leslie");
+            var g= new Player("Ron");
+            var h = new Player("Ann");
+            test.activeParty = test.partyOne;
+            test.activeParty.activePlayer = test.activeParty.playerOne;
+            richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
+            richTextBox1.Text = test.activeParty.activePlayer.Name+ "\n\n\n"+test.activeParty.activePlayer.Name+"\n\n\n"+test.activeParty.activePlayer.Name;
+            
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -36,18 +41,31 @@ namespace CombatFSM
         {
 
         }
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
+            test.incrementActivePlayer();
+
+            richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
         private void button2_Click(object sender, EventArgs e)
         {
 
+            test.incrementActivePlayer();
+
+            richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
+            test.incrementActivePlayer();
+
+            richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 
 

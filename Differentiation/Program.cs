@@ -59,7 +59,7 @@ namespace Differentiation
                 }
                 else
                 {
-                    
+
                     test = digits;
                     for (int j = 0; j < test; j++)
                     {
@@ -71,41 +71,57 @@ namespace Differentiation
                         digits--;
                     }
                 }
-                
+
                 if (number > 0)
                 {
                     equation.Add((char)number);
                     number = 0;
                 }
             }
-            
+
             return equation;
         }
         static public List<char> differentiate(List<char> a)
         {
             List<char> temp = new List<char>();
-            temp.Add(a[0]);
-            for (int i =0;i<a.Count;i++)
+            if (a.Count == 0)
             {
-                if(a[i]=='x')
+                return null;
+            }
+            for(int i = 0;i<a.Count;i++)
+            {
+                if(a[i]!=120)
                 {
-                    if(a[i+1]=='^')
-                    {
-                      
-                    }
+
                 }
             }
+
+            //if (a[0] == 120)
+            //{
+            //    for (int i = 0; i < a.Count; i++)
+            //    {
+
+            //    }
+            //}
+            //for (int i = 0; i < a.Count; i++)
+            //{
+            //    if (a[i] == 'x')
+            //    {
+            //        if (a[i] == '^')
+            //        {
+                        
+            //        }
+            //    }
+            //}
             return temp;
         }
         static void Main(string[] args)
         {
 
             string equation = Console.ReadLine();
-           List<char> testing = convertToEquation(equation);
-            foreach(char a in testing)
-            {
-                Console.Write(a);
-            }
+            List<char> testing = convertToEquation(equation);
+            testing = differentiate(testing);
+
             Console.Read();
         }
     }

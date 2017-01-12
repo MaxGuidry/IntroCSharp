@@ -9,6 +9,7 @@ namespace CombatFSM
     public class Combat
     {
         public Combat() { }
+        private Party activeParty;
         public Party partyOne;
         public Party partyTwo;
     }

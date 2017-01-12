@@ -18,7 +18,14 @@ namespace CombatFSM
         {
             InitializeComponent();
             Combat test = new Combat();
-            
+            test.partyOne = new Party();
+            test.partyTwo = new Party();
+            test.partyOne.playerOne = new Player("Jim");
+            test.partyOne.playerTwo = new Player("Pam");
+            test.partyOne.playerThree = new Player("Michael");
+            test.partyTwo.playerOne = new Player("Leslie");
+            test.partyTwo.playerTwo = new Player("Ron");
+            test.partyTwo.playerThree = new Player("Ann");
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

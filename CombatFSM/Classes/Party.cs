@@ -9,6 +9,7 @@ namespace CombatFSM.Classes
    public class Party
     {
         public Party() { }
+        private Player activePlayer;
         public Player playerOne, playerTwo, playerThree;
     }
 }

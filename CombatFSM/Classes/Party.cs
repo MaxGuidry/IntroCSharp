@@ -27,6 +27,7 @@ namespace CombatFSM.Classes
             {
                 if(i==players.Count-1)
                 {
+                    activePlayer = players[0];
                     return false;
                 }
                 else if (a == activePlayer)
@@ -42,10 +43,14 @@ namespace CombatFSM.Classes
             int i=0;
             foreach(Player a in players)
             {
-                if(a==activePlayer)
+                if(a==activePlayer && i + 1 < players.Count)
                 {
                     activePlayer=players[i+1];
                     break;
+                }
+                else if(activePlayer == players[i] && i + 1 >= players.Count)
+                {
+                    activePlayer = players[0];
                 }
                 i++;
             }

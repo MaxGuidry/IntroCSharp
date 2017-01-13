@@ -25,6 +25,7 @@ namespace CombatFSM
             var f= new Player("Leslie");
             var g= new Player("Ron");
             var h = new Player("Ann");
+           
             test.addParty(a);
             test.addParty(b);
             test.addPlayer(c, 1);
@@ -45,16 +46,14 @@ namespace CombatFSM
         {
 
         }
-        private void richTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
 
             test.incrementActivePlayer();
-
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
+            
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -70,6 +69,6 @@ namespace CombatFSM
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 
-
+      
     }
 }

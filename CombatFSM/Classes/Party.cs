@@ -9,8 +9,12 @@ namespace CombatFSM.Classes
     public class Party
     {
         public Party() { }
+
+
         public Player activePlayer;
-        public void addPlayer(Player a)
+
+        int currentID=0;
+        public void AddPlayer(Player a)
         {
             if (players.Count == 0)
             {
@@ -19,13 +23,16 @@ namespace CombatFSM.Classes
             }
             else
                 players.Add(a);
+            a.onEndTurn += IncrementActivePlayer;
         }
-        public bool canIncrementActivePlayer()
+
+
+        public bool CanIncrementActivePlayer()
         {
             int i = 0;
             foreach (Player a in players)
             {
-                if(i==players.Count-1)
+                if (i == players.Count - 1)
                 {
                     activePlayer = players[0];
                     return false;
@@ -38,23 +45,43 @@ namespace CombatFSM.Classes
             }
             return false;
         }
-        public void incrementActivePlayer()
+
+
+        public void IncrementActivePlayer()
         {
-            int i=0;
-            foreach(Player a in players)
+            if(CanIncrementActivePlayer()==false)
             {
-                if(a==activePlayer && i + 1 < players.Count)
+                activePlayer = players[0];
+                EndParty();
+                return;
+            }
+            
+            int i = 0;
+            foreach (Player a in players)
+            {
+                if (a == activePlayer && i + 1 < players.Count)
                 {
-                    activePlayer=players[i+1];
+                    activePlayer = players[i + 1];
                     break;
                 }
-                else if(activePlayer == players[i] && i + 1 >= players.Count)
+                else if (activePlayer == players[i] && i + 1 >= players.Count)
                 {
                     activePlayer = players[0];
                 }
                 i++;
             }
         }
+
+        public delegate void OnPartyEnd();
+
+        public OnPartyEnd onPartyEnd;
+
+        void EndParty()
+        {
+            if (onPartyEnd != null)
+                onPartyEnd.Invoke();
+        }
+
         private List<Player> players = new List<Player>();
     }
 }

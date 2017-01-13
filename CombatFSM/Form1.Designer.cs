@@ -71,7 +71,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Font = new System.Drawing.Font("Stencil", 25F);
             this.richTextBox1.Location = new System.Drawing.Point(14, 12);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
@@ -82,7 +82,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Font = new System.Drawing.Font("Stencil", 25F);
             this.richTextBox2.Location = new System.Drawing.Point(619, 12);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;

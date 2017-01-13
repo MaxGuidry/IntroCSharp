@@ -11,17 +11,41 @@ namespace CombatFSM
         public Combat() { }
         public void incrementActiveParty()
         {
-            
+            int i = 0;
+            foreach (Party a in parties)
+            {
+                if (a == activeParty)
+                {
+                    activeParty = parties[i + 1];
+                    break;
+                }
+                i++;
+            }
         }
         public void incrementActivePlayer()
         {
-            
+            if (activeParty.canIncrementActivePlayer() == false)
+            {
+                incrementActiveParty();
+            }
+            else
+                activeParty.incrementActivePlayer();
         }
         public Party activeParty;
         public void addParty(Party a)
         {
-            parties.Add(a);
+            if (parties.Count == 0)
+            {
+                parties.Add(a);
+                activeParty = parties[0];
+            }
+            else
+                parties.Add(a);
         }
-        private List<Party> parties= new List<Party>();
+        public void addPlayer(Player a, int party)
+        {
+            parties[party - 1].addPlayer(a);
+        }
+        private List<Party> parties = new List<Party>();
     }
 }

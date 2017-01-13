@@ -17,7 +17,6 @@ namespace CombatFSM
         public Form1()
         {
             InitializeComponent();
-
             var a = new Party();
             var b = new Party();
             var c= new Player("Jim");
@@ -26,11 +25,16 @@ namespace CombatFSM
             var f= new Player("Leslie");
             var g= new Player("Ron");
             var h = new Player("Ann");
-            test.activeParty = test.partyOne;
-            test.activeParty.activePlayer = test.activeParty.playerOne;
+            test.addParty(a);
+            test.addParty(b);
+            test.addPlayer(c, 1);
+            test.addPlayer(d, 1);
+            test.addPlayer(e, 1);
+            test.addPlayer(f, 2);
+            test.addPlayer(g, 2);
+            test.addPlayer(h, 2);
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
             richTextBox1.Text = test.activeParty.activePlayer.Name+ "\n\n\n"+test.activeParty.activePlayer.Name+"\n\n\n"+test.activeParty.activePlayer.Name;
-            
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -56,7 +60,6 @@ namespace CombatFSM
         {
 
             test.incrementActivePlayer();
-
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 
@@ -64,7 +67,6 @@ namespace CombatFSM
         {
 
             test.incrementActivePlayer();
-
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 

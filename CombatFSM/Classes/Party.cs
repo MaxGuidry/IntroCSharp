@@ -23,7 +23,7 @@ namespace CombatFSM.Classes
             }
             else
                 players.Add(a);
-            a.onEndTurn += IncrementActivePlayer;
+            a.onEndTurn += NextPlayer;
         }
 
 
@@ -47,7 +47,7 @@ namespace CombatFSM.Classes
         }
 
 
-        public void IncrementActivePlayer()
+        public void NextPlayer()
         {
             if(CanIncrementActivePlayer()==false)
             {

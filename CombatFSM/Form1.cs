@@ -51,20 +51,20 @@ namespace CombatFSM
         private void button1_Click(object sender, EventArgs e)
         {
            // fight.Play();
-            //test.incrementActivePlayer();
+           
             test.activeParty.activePlayer.EndTurn();
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            //test.incrementActivePlayer();
+            
             test.activeParty.activePlayer.EndTurn();
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //test.incrementActivePlayer();
+            
             test.activeParty.activePlayer.EndTurn();
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }

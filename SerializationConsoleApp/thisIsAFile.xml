@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <NAME>test</NAME>
+  <AGE>90</AGE>
+  <ID>ng6969</ID>
+</Student>

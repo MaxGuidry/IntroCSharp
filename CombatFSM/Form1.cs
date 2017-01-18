@@ -12,7 +12,7 @@ namespace CombatFSM
 {
     public partial class Form1 : Form
     {
-       System.Media.SoundPlayer fight = new System.Media.SoundPlayer();
+       //System.Media.SoundPlayer fight = new System.Media.SoundPlayer();
        
         Combat test = new Combat();
 
@@ -27,7 +27,7 @@ namespace CombatFSM
             var f = new Player("Leslie");
             var g = new Player("Ron");
             var h = new Player("Ann");
-            fight.SoundLocation = "C:\\Users\\max.guidry\\Documents\\Visual Studio 2015\\Projects\\IntroCSharp\\CombatFSM\\attack.wav";
+            //fight.SoundLocation = "C:\\Users\\max.guidry\\Documents\\Visual Studio 2015\\Projects\\IntroCSharp\\CombatFSM\\attack.wav";
             test.AddParty(a);
             test.AddParty(b);
             test.AddPlayer(c, 1);
@@ -58,12 +58,14 @@ namespace CombatFSM
         private void button2_Click(object sender, EventArgs e)
         {
             //test.incrementActivePlayer();
+            test.activeParty.activePlayer.EndTurn();
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //test.incrementActivePlayer();
+            test.activeParty.activePlayer.EndTurn();
             richTextBox3.Text = "Player " + test.activeParty.activePlayer.Name + "'s turn.";
         }
     }

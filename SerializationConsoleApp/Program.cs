@@ -32,8 +32,7 @@ namespace SerializationConsoleApp
             XmlSerializer serialize = new XmlSerializer(typeof(T));
             if (!File.Exists(@"..\..\" + fileName + ".xml"))
             {
-                File.Create(@"..\..\" + fileName + ".xml");
-                //File.Open(@"..\..\" + fileName + ".xml",FileMode.Open);
+                File.Create(@"..\..\" + fileName + ".xml"); 
 
             }
 

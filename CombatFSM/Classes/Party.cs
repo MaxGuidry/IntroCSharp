@@ -15,7 +15,27 @@ namespace CombatFSM.Classes
         //public Player ACTIVEPLAYER { get { return activePlayer; } set { activePlayer = value; } }
         public Player activePlayer;
 
-        //int currentID=0;
+        public void OnLoad()
+        {
+            List<Player> temp = new List<Player>();
+            for (int i = 0; i < players.Count; i++)
+            {
+                temp.Add(players[i]);
+                
+            }
+            for (int i = 0; i < temp.Count; i++)
+            {
+                AddPlayer(temp[i]);
+            }
+            players = temp;
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].Name ==activePlayer.Name)
+                {
+                    activePlayer = players[i];
+                }
+            }
+        }
         public void AddPlayer(Player a)
         {
             if (players.Count == 0)

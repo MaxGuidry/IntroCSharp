@@ -2,24 +2,24 @@
 <Combat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <activeParty>
     <activePlayer>
-      <Name>Leslie</Name>
+      <Name>Michael</Name>
     </activePlayer>
     <PLAYER>
       <Player>
-        <Name>Leslie</Name>
+        <Name>Jim</Name>
       </Player>
       <Player>
-        <Name>Ron</Name>
+        <Name>Pam</Name>
       </Player>
       <Player>
-        <Name>Ann</Name>
+        <Name>Michael</Name>
       </Player>
     </PLAYER>
   </activeParty>
   <PARTY>
     <Party>
       <activePlayer>
-        <Name>Jim</Name>
+        <Name>Michael</Name>
       </activePlayer>
       <PLAYER>
         <Player>

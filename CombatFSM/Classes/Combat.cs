@@ -9,7 +9,27 @@ namespace CombatFSM
     public class Combat
     {
         public Combat() { }
-
+        public void OnLoad()
+        {
+            List<Party> temp = new List<Party>();
+            for(int i =0;i<parties.Count;i++)
+            {
+                temp.Add(parties[i]);
+                temp[i].OnLoad();
+            }
+            for(int i=0;i<temp.Count;i++)
+            {
+                AddParty(temp[i]);
+            }
+            parties = temp;
+            for (int i = 0; i < parties.Count; i++)
+            {
+                if (parties[i].activePlayer.Name ==activeParty.activePlayer.Name)
+                {
+                   activeParty = parties[i];
+                }
+            }
+        }
 
        /// <summary>
        /// function to increment the active party 
@@ -33,7 +53,6 @@ namespace CombatFSM
             }
         }
 
-
         public void AddParty(Party a)
         {
             if (parties.Count == 0)
@@ -53,9 +72,10 @@ namespace CombatFSM
             parties[party - 1].AddPlayer(a);
         }
 
-
+        public List<Party> PARTY { get { return parties; } set { parties = value; } }
         private List<Party> parties = new List<Party>();
 
+        
         public Party activeParty;
     }
 

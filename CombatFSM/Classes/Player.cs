@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CombatFSM.Classes;
+using System.IO;
+using System.Xml.Serialization;
 namespace CombatFSM.Classes
 {
     public class Player
     {
+        public Player() { }
         public Player(string name)
         {
             m_name = name;
         }
 
         public delegate void OnEndTurn();
+        [XmlIgnore]
         public OnEndTurn onEndTurn;
         public void EndTurn()
         {
@@ -30,7 +34,7 @@ namespace CombatFSM.Classes
 
         }
         private string m_name;
-        public string Name { get { return m_name; } }
+        public string Name { get { return m_name; } set { m_name = value; } }
 
     }
 }

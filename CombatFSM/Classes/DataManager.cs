@@ -5,31 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
-namespace Serializing.Classes
+namespace CombatFSM.Classes
 {
-    public class Student
-    {
-        private string m_Name;
-        private int m_Age;
-        private string m_ID;
-        public Student(string name, int age, string id)
-        {
-            m_Name = name;
-            m_Age = age;
-            m_ID = id;
-        }
-        public Student() { }
-        public string NAME { get { return m_Name; } set { m_Name = value; } }
-        public int AGE { get { return m_Age; } set { m_Age = value; } }
-        public string ID { get { return m_ID; } set { m_ID = value; } }
-
-    }
-
+   
     class DataManager<T>
     {
         public static void Serialize(string fileName, ref T data)
         {
-            XmlSerializer serialize = new XmlSerializer(typeof(T));
+            XmlRootAttribute xRoot = new XmlRootAttribute();
+            xRoot.ElementName = "Combat";
+            xRoot.IsNullable = true;
+            XmlSerializer serialize = new XmlSerializer(typeof(T),xRoot);
             if (!File.Exists(@"..\..\" + fileName + ".xml"))
             {
           

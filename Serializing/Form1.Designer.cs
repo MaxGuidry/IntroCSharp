@@ -63,6 +63,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.richTextBox1.Location = new System.Drawing.Point(49, 77);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(211, 48);
@@ -71,6 +72,7 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.richTextBox2.Location = new System.Drawing.Point(49, 265);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(211, 48);
@@ -107,10 +109,12 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.numericUpDown1.Location = new System.Drawing.Point(49, 162);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(141, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(150, 38);
             this.numericUpDown1.TabIndex = 7;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // Form1
             // 

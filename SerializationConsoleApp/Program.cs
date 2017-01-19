@@ -47,6 +47,7 @@ namespace SerializationConsoleApp
             XmlSerializer deser = new XmlSerializer(typeof(T));
             TextReader reader = new StreamReader(@"..\..\" + fileName + ".xml");
             data = (T)deser.Deserialize(reader);
+            reader.Close();
             return data;
         }
     }

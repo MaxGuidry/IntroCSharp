@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CombatFSM.Classes;
+using System.IO;
+using System.Xml.Serialization;
 namespace CombatFSM.Classes
 {
     public class Party
     {
         public Party() { }
 
-
+        //public Player ACTIVEPLAYER { get { return activePlayer; } set { activePlayer = value; } }
         public Player activePlayer;
 
-        int currentID=0;
+        //int currentID=0;
         public void AddPlayer(Player a)
         {
             if (players.Count == 0)
@@ -25,8 +27,7 @@ namespace CombatFSM.Classes
                 players.Add(a);
             a.onEndTurn += NextPlayer;
         }
-
-
+         
         public bool CanIncrementActivePlayer()
         {
             int i = 0;
@@ -49,13 +50,13 @@ namespace CombatFSM.Classes
 
         public void NextPlayer()
         {
-            if(CanIncrementActivePlayer()==false)
+            if (CanIncrementActivePlayer() == false)
             {
                 activePlayer = players[0];
                 EndParty();
                 return;
             }
-            
+
             int i = 0;
             foreach (Player a in players)
             {
@@ -73,7 +74,7 @@ namespace CombatFSM.Classes
         }
 
         public delegate void OnPartyEnd();
-
+        [XmlIgnore]
         public OnPartyEnd onPartyEnd;
 
         void EndParty()
@@ -81,7 +82,7 @@ namespace CombatFSM.Classes
             if (onPartyEnd != null)
                 onPartyEnd.Invoke();
         }
-
+       public List<Player> PLAYER { get { return players; } set { players = value; } }
         private List<Player> players = new List<Player>();
     }
 }

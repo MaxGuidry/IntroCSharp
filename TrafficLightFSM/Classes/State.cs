@@ -19,6 +19,6 @@ namespace TrafficLightFSM.Classes
                 startState.Invoke();
 
         }
-        
+        private string Name;
     }
 }

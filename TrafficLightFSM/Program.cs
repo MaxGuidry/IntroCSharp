@@ -12,17 +12,8 @@ namespace TrafficLightFSM
     {
         static void Main(string[] args)
         {
-
-            Stopwatch test = new Stopwatch();
-            test.Start();
-            
-            while (true)
-            {
-
-               
-              
-
-            }
+           
+           
         }
     }
 }

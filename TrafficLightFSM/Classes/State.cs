@@ -15,7 +15,10 @@ namespace TrafficLightFSM.Classes
 
         public void OnStart()
         {
-            
+            if (startState != null)
+                startState.Invoke();
+
         }
+        
     }
 }

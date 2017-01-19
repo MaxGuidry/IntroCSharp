@@ -9,6 +9,6 @@ namespace TrafficLightFSM.Classes
     class Transition
     {
         public Transition() { }
-        
+        public State A, B;
     }
 }

@@ -8,17 +8,23 @@ namespace TrafficLightFSM.Classes
 {
     class State
     {
-        public State() { }
 
-        public delegate void OnStartState();
-        OnStartState startState;
-
-        public void OnStart()
+        public State()
+        { }
+        public State(Enum e)
         {
-            if (startState != null)
-                startState.Invoke();
-
+            name = e.ToString();
         }
-        private string Name;
+        public string name;
+        public delegate void OnEnter();
+        public delegate void OnExit();
+        public OnEnter onEnter;
+        public OnExit onExit;
+
+        public void AddEnterFunction(Delegate d)
+        {
+            onEnter += d as OnEnter;
+        }
+
     }
 }

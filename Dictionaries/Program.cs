@@ -29,6 +29,7 @@ namespace Dictionaries
             tester.Add("Max", Max);
             tester.Add("Donray", Donray);
             Student temp = tester["Max"];
+          
             Console.Read();
         }
     }

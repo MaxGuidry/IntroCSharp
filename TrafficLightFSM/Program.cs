@@ -42,8 +42,6 @@ namespace TrafficLightFSM
         public delegate void Handler();
         static void Main(string[] args)
         {
-
-          
             //usage would be 
             FSM<LightState> trafficFSM = new FSM<LightState>();
             trafficFSM.AddState(new State(LightState.INIT));
@@ -56,10 +54,7 @@ namespace TrafficLightFSM
             trafficFSM.AddTransition(LightState.GREEN, LightState.YELLOW);
             trafficFSM.AddTransition(LightState.YELLOW, LightState.RED);
             trafficFSM.GetState(LightState.RED).AddEnterFunction((Handler)LightBehaviour.RedLightBehaviour);
-
-
-
-            trafficFSM.Start();
+             trafficFSM.Start();
 
             while (true)
             {

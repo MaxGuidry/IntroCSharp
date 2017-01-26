@@ -20,7 +20,7 @@ namespace TrafficLightFSM
 
     class Program
     {
-        
+
 
         class LightBehaviour
         {
@@ -31,11 +31,11 @@ namespace TrafficLightFSM
             static public void GreenLightBehaviour()
             {
 
-
+                Console.WriteLine("I'm at the greenlight");
             }
             static public void YellowLightBehaviour()
             {
-
+                Console.WriteLine("I'm at the yellowlight");
             }
         }
 
@@ -49,16 +49,23 @@ namespace TrafficLightFSM
             trafficFSM.AddState(new State(LightState.GREEN));
             trafficFSM.AddState(new State(LightState.YELLOW));
             trafficFSM.AddState(new State(LightState.EXIT));
+
             trafficFSM.AddTransition(LightState.INIT, LightState.RED);
             trafficFSM.AddTransition(LightState.RED, LightState.GREEN);
             trafficFSM.AddTransition(LightState.GREEN, LightState.YELLOW);
             trafficFSM.AddTransition(LightState.YELLOW, LightState.RED);
             trafficFSM.GetState(LightState.RED).AddEnterFunction((Handler)LightBehaviour.RedLightBehaviour);
-             trafficFSM.Start();
-
+            trafficFSM.GetState(LightState.GREEN).AddEnterFunction((Handler)LightBehaviour.GreenLightBehaviour);
+            trafficFSM.GetState(LightState.YELLOW).AddEnterFunction((Handler)LightBehaviour.YellowLightBehaviour);
+            trafficFSM.Start();
+            System.Timers.Timer d = new System.Timers.Timer();
+            d.Start();
+            
             while (true)
             {
+                
                 trafficFSM.Update();
+                
             }
         }
 

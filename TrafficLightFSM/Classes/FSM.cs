@@ -38,14 +38,14 @@ namespace TrafficLightFSM.Classes
         }
         public bool AddState(State state)
         {
-            if(transitions.Count==0)
+            if (states.Count == 0)
             {
-                transitions.Add(state.name, new List<State>());
+                states.Add(state.name, state);
                 return true;
             }
-            else if (transitions.ContainsKey(state.name) == false)
+            else if (states.ContainsKey(state.name) == false)
             {
-                transitions.Add(state.name, new List<State>());
+                states.Add(state.name, state);
                 return true;
             }
 
@@ -61,13 +61,18 @@ namespace TrafficLightFSM.Classes
             //fsm.AddState(idle);
             //usage would be fsm.AddTransition(init, idle)
             //access the transitions for the state
-            State s = a as State;
-            var tmp = transitions[s.name];
+            State c = new State(a as Enum);
+            State d = new State(b as Enum);
+            List<State> tmp = new List<State>();
+            tmp.Add(c);
+            tmp.Add(d);
+            transitions.Add(transitions.Count.ToString(), tmp);
             return true;
         }
         public State GetState(T e)
         {
-            string key = (e as State).name;
+            State s = new State(e as Enum);
+            string key = (s).name;
             return states[key];
         }
         private Dictionary<string, List<State>> transitions = new Dictionary<string, List<State>>();
@@ -90,6 +95,7 @@ namespace TrafficLightFSM.Classes
 
         public bool Update()
         {
+            
             return true;
         }
     }

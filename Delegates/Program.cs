@@ -72,10 +72,7 @@ namespace Delegates
                 ConsoleKeyInfo c = Console.ReadKey(true);
                 if (c.Key == ConsoleKey.A)
                 {
-                    
-                    
-                    p.Act();
-                  
+                    p.Act();            
                 }
 
                 if (c.Key == ConsoleKey.Spacebar)

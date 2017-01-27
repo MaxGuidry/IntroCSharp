@@ -63,26 +63,28 @@ namespace Delegates
         {
             Person p = new Person();
 
-            Callback cb = DoThing;
-            Callback[] ccc = { DoThing, DoOtherThing, thisisdkdkdkj };
-            p.AddFunction(cb);
-            int ct = 0;
-            while (true)
-            {
-                ConsoleKeyInfo c = Console.ReadKey(true);
-                if (c.Key == ConsoleKey.A)
-                {
-                    p.Act();            
-                }
+            //Callback cb = DoThing;
+            //Callback[] ccc = { DoThing, DoOtherThing, thisisdkdkdkj };
+            //p.AddFunction(cb);
+            //int ct = 0;
+            //while (true)
+            //{
+            //    ConsoleKeyInfo c = Console.ReadKey(true);
+            //    if (c.Key == ConsoleKey.A)
+            //    {
+            //        p.Act();            
+            //    }
 
-                if (c.Key == ConsoleKey.Spacebar)
-                {
-                    p.RemoveFunction(ccc[ct]);
-                    ct++;
-                    if (ct > 2)
-                        ct = 0;
-                    p.AddFunction(ccc[ct]);
-                }
+            //    if (c.Key == ConsoleKey.Spacebar)
+            //    {
+            //        p.RemoveFunction(ccc[ct]);
+            //        ct++;
+            //        if (ct > 2)
+            //            ct = 0;
+            //        p.AddFunction(ccc[ct]);
+            //    }
+
+            
             }
         }
     }

@@ -3,102 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Interfaces.Interfaces;
 namespace Interfaces
 {
-    class Position
+   
+    public class Ninja : IDamagable, IDamager
     {
-        public Position() { }
-        public Position(float X, float Y)
+        public Ninja(int h) { health = h; }
+        public void DoDamage(IDamagable d)
         {
-            x = X;
-            y = Y;
-        }
-        public float X
-        {
-            get
-            {
-                return x;
-            }
-        }
-        public float Y
-        {
-            get
-            {
-                return y;
-            }
-        }
-        static public Position operator +(Position p, Position current)
-        {
-            Position temp = new Position(0, 0);
-            temp.x = current.x + p.x;
-            temp.y = current.y + p.y;
-            return temp;
-        }
-        static public Position operator -(Position current, Position p)
-        {
-            Position temp = new Position(0, 0);
-            temp.x = current.x - p.x;
-            temp.y = current.y - p.y;
-            return temp;
+            d.TakeDamage(10);
         }
 
-        private float x, y;
-    }
-    interface Ivehicle
-    {
-        void move(Position a);
 
-    }
-    class Car : Ivehicle
-    {
-        public Car()
+        public void TakeDamage(int i)
         {
-            m_Position = new Position(0, 0);
+            health -= i;
         }
-        public Position Position
-        {
-            get
-            {
-                return m_Position;
-            }
-        }
-        public void move(Position a)
-        {
-            m_Position += a;
-        }
-        private Position m_Position;
+        public int Health { get { return health; } }
 
+        private int health;
     }
-    class Bus : Ivehicle
+
+    public class Zombie : IDamager, IDamagable
     {
-        public Bus()
+        public Zombie(int h) { health = h; }
+        public void DoDamage(IDamagable d)
         {
-            m_position = new Position(0, 0);
+            d.TakeDamage(5);
         }
-        public void move(Position a)
+
+        public void TakeDamage(int i)
         {
-            m_position += a;
+            health -= i;
         }
-        public Position Position
-        {
-            get
-            {
-                return m_position;
-            }
-        }
-        private Position m_position;
+        public int Health { get { return health; } }
+        private int health;
     }
 
     class Program
     {
-       
+
         static void Main(string[] args)
         {
-            Car lambo = new Car();
-            Bus greyhound = new Bus();
-            lambo.move(new Position(20, 20));
-            greyhound.move(new Position(30, 1));
+            Zombie z = new Zombie(100);
+            Ninja n = new Ninja(100);
+            while (true)
+            {
+                ConsoleKey key = Console.ReadKey(true).Key;
+                if (key == ConsoleKey.Z)
+                    z.DoDamage(n);
+                else if (key == ConsoleKey.N)
+                    n.DoDamage(z);
+                Console.WriteLine("Zombies Health: " + z.Health);
+                Console.WriteLine("Ninjas Health: " + n.Health + "\n\n");
+            }
         }
     }
 }

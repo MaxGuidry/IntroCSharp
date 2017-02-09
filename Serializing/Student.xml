@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <NAME>aaaa</NAME>
-  <AGE>25</AGE>
-  <ID>d</ID>
+  <NAME>Bob</NAME>
+  <AGE>5</AGE>
+  <ID>101</ID>
 </Student>

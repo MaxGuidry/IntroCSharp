@@ -10,7 +10,8 @@ namespace Singlton
     {
         static void Main(string[] args)
         {
-            Debug.WriteLine("Donray a nignog.");
+            Singleton.Instance.name = "bob";
+            Debug.Write("accessed the singleton" + Singleton.Instance.name);
         }
     }
 }

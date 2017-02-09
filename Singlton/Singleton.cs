@@ -24,6 +24,6 @@ namespace Singlton
             }
 
         }
-
+        public string name;
     }
 }

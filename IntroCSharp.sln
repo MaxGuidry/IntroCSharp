@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Dele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singlton", "Singlton\Singlton.csproj", "{0697588A-1A74-4F19-9CE8-3C9B3AA4DF52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializePractice", "SerializePractice\SerializePractice.csproj", "{3540C703-DFE1-4D79-B981-DAE77EF6131F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{0697588A-1A74-4F19-9CE8-3C9B3AA4DF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0697588A-1A74-4F19-9CE8-3C9B3AA4DF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0697588A-1A74-4F19-9CE8-3C9B3AA4DF52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3540C703-DFE1-4D79-B981-DAE77EF6131F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3540C703-DFE1-4D79-B981-DAE77EF6131F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3540C703-DFE1-4D79-B981-DAE77EF6131F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3540C703-DFE1-4D79-B981-DAE77EF6131F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
